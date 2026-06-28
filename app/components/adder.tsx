@@ -240,7 +240,6 @@ export default function Adder({ onAddSpell }: AdderProps) {
           placeholder="Enter spell name..."
           value={name}
           onChange={(e) => setName(e.target.value)}
-          disabled={loading}
         />
         <button
           type="submit"
