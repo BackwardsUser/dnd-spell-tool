@@ -1,25 +1,16 @@
-version: '3.8'
-
 services:
-  nextjs-app:
+  spellsviewer:
     build:
       context: .
       dockerfile: Dockerfile
-    container_name: nextjs-app
+    container_name: spellsviewer
     restart: unless-stopped
     ports:
       - "${PORT:-3000}:${PORT:-3000}"
     environment:
       - NODE_ENV=production
       - PORT=${PORT:-3000}
-      # Add other environment variables here
-      # - NEXT_PUBLIC_API_URL=${NEXT_PUBLIC_API_URL}
     volumes:
-      # Optional: mount for logs or persistent data
       - ./logs:/app/logs
     networks:
       - nextjs-network
-
-networks:
-  nextjs-network:
-    driver: bridge
