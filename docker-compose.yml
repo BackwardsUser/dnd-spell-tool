@@ -12,5 +12,3 @@ services:
       - PORT=${PORT:-3000}
     volumes:
       - ./logs:/app/logs
-    networks:
-      - nextjs-network
